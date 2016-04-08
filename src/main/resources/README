@@ -1,0 +1,24 @@
+Personalized PageRank Community Detection (PPRCD).
+
+Read graph files in METIS format. And detects communities. Writes one
+community per line to stdout. Each number represents a vertex.
+
+Usage:
+  pprcd FILE [-a ALPHA] [-t TOLERANCE] [-s SEEDS] [--stats]
+  pprcd (-h | --help)
+  pprcd --version
+
+Options:
+  -a ALPHA      Alpha value [default: 0.99].
+  -t TOLERANCE  Tolerance value [default: 0.01].
+  -s SEEDS      Vertices to use as seeds. If no seeds are specified the
+                    algorithm will attempt to detect all communities. Vertices
+                    must be separated with only one comma.
+  --stats       Write statistics to CSV files. Files will be named FILE-STAT
+                    .csv, located in same directory as FILE. Availible
+                    statistics (STAT) are described below:
+                block-matrix: adjacenty matrix, describing degree of edges
+                    between blocks. Loops (identities) are internal degree.
+                block-size: number of vertices in each block.
+  -h --help     Show this screen.
+  --version     Show version.
